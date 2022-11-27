@@ -1,4 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+$breakpoint: 768px;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-login,
+app-registration {
+  .mat-card {
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint) {
+      width: 50%;
+    }
+
+    margin: 24px auto;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-header {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 0 24px 0;
+    }
+
+    &-content {
+      width: 100%;
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-form-field {
+      width: 80%;
+    }
+  }
+}

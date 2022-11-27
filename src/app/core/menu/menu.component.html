@@ -1,3 +1,13 @@
 <mat-toolbar>
-  <span>Ötletdoboz</span>
+  <div>
+    <span>Ötletdoboz</span>
+  </div>
+  <div>
+    <span *ngIf="loggedInUserName">
+      {{ loggedInUserName }}
+    </span>
+    <button mat-button (click)="logout()" *ngIf="isLoggedIn">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
