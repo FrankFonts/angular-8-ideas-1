@@ -47,7 +47,7 @@ export class AuthService {
 
   logout() {
     return this.http.post<{}>(`${this._baseUrl}/logout`, null).pipe(
-      tap((user) => {
+      tap(() => {
         this.handleLogout();
       })
     );
@@ -73,5 +73,13 @@ export class AuthService {
 
   private clearLocalStorage() {
     localStorage.removeItem(this.loggedInUserKey);
+  }
+
+  registration(email: string, username: string, password: string) {
+    return this.http.post<{ User }>(`${this._baseUrl}/registration`, {
+      email,
+      name: username,
+      password,
+    });
   }
 }

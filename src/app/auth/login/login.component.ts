@@ -16,8 +16,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.authService
-      .login(this.email, this.password)
-      .subscribe((user) => this.router.navigateByUrl('/ideas'));
+    // rudimentary error handling
+    if (this.email && this.password) {
+      this.authService
+        .login(this.email, this.password)
+        .subscribe(() => this.router.navigateByUrl('/ideas'));
+    }
   }
 }

@@ -1,1 +1,46 @@
-<p>registration works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Registration</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="login-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" [(ngModel)]="email" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          [(ngModel)]="password"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password again</mat-label>
+        <input
+          matInput
+          placeholder="Password again"
+          type="password"
+          [(ngModel)]="passwordAgain"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="username" />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions align="start">
+    <button mat-flat-button (click)="registrate()" color="primary">
+      Registrate
+    </button>
+
+    <button mat-flat-button [routerLink]="['/login']" color="basic">
+      Back to login
+    </button>
+  </mat-card-actions>
+</mat-card>
